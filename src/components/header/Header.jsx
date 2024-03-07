@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Image } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Text } from "@chakra-ui/react";
 import { FaCartPlus, FaEtsy, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import imageSrc from "../../assets/logo.jpg";
@@ -47,6 +47,9 @@ const Header = () => {
 				>
 					<FaCartPlus />
 				</Box>
+				<Text ml={"-2em"} fontSize={"sm"}>
+					2
+				</Text>
 			</HStack>
 		</Flex>
 	);

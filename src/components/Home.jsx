@@ -1,12 +1,9 @@
-import {
-	Box,
-	Button,
-	Flex,
-	Heading,
-	useColorModeValue,
-} from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import Header from "./header/Header";
+import Favorite from "./sections/Favorite";
+import Journal from "./sections/Journal";
+import Main from "./sections/Main";
+import Subscribe from "./sections/Subscribe";
 
 const Home = () => {
 	const imageSrc =
@@ -18,57 +15,31 @@ const Home = () => {
 	const shadowStyle = {
 		boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
 	};
-
+	const bg1 =
+		"https://images.unsplash.com/photo-1586552611453-6680dcf78fb0?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 	return (
-		<Box
-			bgColor={bgColor}
-			backgroundSize="cover"
-			backgroundPosition="center"
-			backgroundImage={`url(${imageSrc})`}
-			style={shadowStyle}
-		>
-			<Header />
-
-			<Box h="100vh">
-				<Flex h="100%" align="center" justify="center" direction="column">
-					<Heading
-						fontSize={"4em"}
-						color="white"
-						fontWeight={"normal"}
-						mb="4"
-						textAlign="center"
-					>
-						Unique African
-					</Heading>
-					<Heading
-						fontSize={"4em"}
-						fontWeight={"normal"}
-						color="white"
-						mb="4"
-						textAlign="center"
-					>
-						Gifts & Trinkets
-					</Heading>
-					<Link to="/store">
-						<Button
-							color="#fff"
-							mt="4"
-							borderRadius={0}
-							border={"1px solid #eee"}
-							variant={"outline"}
-							w="10rem"
-							h="4rem"
-							fontSize="15px"
-							fontWeight={"normal"}
-						>
-							Shop Now
-						</Button>
-					</Link>
-				</Flex>
+		<Box bg={"hsl(240deg 2.61% 22.55%)"}>
+			<Box
+				bgColor={bgColor}
+				backgroundSize="cover"
+				backgroundPosition="center"
+				backgroundImage={`url(${imageSrc})`}
+				style={shadowStyle}
+			>
+				<Header />
+				<Main />
 			</Box>
-
-			{/* Content Sections */}
-			{/* Add your other content sections here */}
+			<Favorite />
+			<Box
+				h="50vh"
+				bgColor={bgColor}
+				backgroundSize="cover"
+				backgroundPosition="center"
+				backgroundImage={`url(${bg1})`}
+				style={shadowStyle}
+			/>
+			<Journal />
+			<Subscribe />
 		</Box>
 	);
 };
